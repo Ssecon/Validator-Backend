@@ -31,11 +31,8 @@ public class GenerateHashServiceImpl implements GenerateHashService {
                 .toString();
         log.info("Hash generado: {} ", hash);
         log.info("UUID: {}",UUID.fromString(generateHashRequest.getUuid()));
-
-
-        //TODO: Falta que el repository recupere registros por UUID.
-        Optional<UserPassword> userPassword = userPasswordsRepository.findById(UUID.fromString(generateHashRequest.getUuid()));
-        log.info("userPassword: {}",userPassword);
+        Optional<UserPassword> userPassword = userPasswordsRepository.findById(1);
+        log.info("userPassword: {}",userPassword.get().getPasswordHash());
         return hash;
     }
 }

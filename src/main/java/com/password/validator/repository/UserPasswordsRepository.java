@@ -10,8 +10,8 @@ import java.util.UUID;
 
 
 @Repository
-public interface UserPasswordsRepository extends JpaRepository<UserPassword, UUID> {
+public interface UserPasswordsRepository extends JpaRepository<UserPassword, Integer> {
     @Override
-    Optional<UserPassword> findById(UUID uuid);
+    Optional<UserPassword> findById(Integer uuid);
 
 }
